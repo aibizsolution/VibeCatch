@@ -143,6 +143,39 @@ VibeX 플랫폼의 가격 책정 페이지입니다.
 
 미래에 추가될 프로젝트들입니다. vibeX와 동일한 구조를 따릅니다.
 
+## 🔧 npm 빌드 스크립트
+
+**현재 사용 가능한 스크립트:**
+
+| 명령어 | 설명 | 언제 사용 |
+|--------|------|---------|
+| `npm run build` | 모든 페이지 빌드 (vibeX만 현재) | 전체 배포 전 |
+| `npm run build:vibeX` | vibeX만 빌드 | vibeX 수정 후 테스트 |
+| `npm run build:pageA` | pageA만 빌드 | pageA 생성 후 사용 |
+| `npm run build:pageB` | pageB만 빌드 | pageB 생성 후 사용 |
+| `npm run build:pageC` | pageC만 빌드 | pageC 생성 후 사용 |
+| `npm run watch` | 모든 폴더 감시 (자동 빌드) | 개발 중 |
+| `npm run watch:vibeX` | vibeX 폴더만 감시 | vibeX 개발 중 |
+| `npm run watch:pageA` | pageA 폴더만 감시 | pageA 개발 중 |
+
+**실제 사용 예시:**
+
+```bash
+# vibeX 개발 중
+npm run watch:vibeX
+# → vibeX/ 폴더의 변경을 감시하고 자동 빌드
+
+# pageA를 새로 만들었을 때
+mkdir pageA
+mkdir pageA/parts
+# ... 파일 작성 ...
+npm run build:pageA
+# → pageA/index.html 생성
+
+# 모든 페이지 빌드
+npm run build
+```
+
 ## 📋 파일 수정 가이드
 
 ### parts/ 파일 구조
@@ -315,26 +348,49 @@ npm run watch:vibeX
 
 ### 새 페이지 추가 절차
 
+#### ⚠️ 주의: 다음은 추가 페이지(pageA, pageB, pageC)를 만들 때의 일반 프로세스입니다!
+
+**현재 저장소 상태:**
+- ✅ **vibeX/** - 완성된 가격 책정 페이지 (이미 운영 중)
+- 📋 **pageA/, pageB/, pageC/** - 미래에 추가할 독립적인 프로젝트들
+
+**새 페이지를 추가할 때 (예: pageA):**
+
 ```bash
 # 1. 새 페이지 폴더 생성
-mkdir pageB
-mkdir pageB/parts
+mkdir pageA
+mkdir pageA/parts
 
-# 2. 기본 HTML 파일 작성
-# pageB/parts/01-head.html
-# pageB/parts/02-body.html
-# ... 등
+# 2. 페이지별 HTML 파일 작성
+# pageA/parts/01-head.html       (메타, CSS 링크)
+# pageA/parts/02-header.html     (네비게이션)
+# pageA/parts/03-body.html       (페이지 콘텐츠)
+# pageA/parts/04-scripts.html    (JS 로드)
 
-# 3. 빌드 테스트
-npm run build:pageB
+# 3. 필요시 JS 파일 작성
+# pageA/pageA-main.js           (UI 로직)
+# pageA/pageA-custom.js         (커스텀 로직)
 
-# 4. Git 커밋
-git add pageB/
-git commit -m "feat: pageB 프로젝트 추가"
+# 4. pageA만 빌드해서 테스트
+npm run build:pageA
 
-# 5. 완료!
-# 이제 npm run build 시 pageB도 자동 빌드됨
+# 5. pageA/index.html가 생성되었는지 확인
+ls pageA/index.html
+
+# 6. 브라우저에서 열어서 동작 확인
+# pageA/index.html를 브라우저에서 열기
+
+# 7. 완료 후 Git 커밋
+git add pageA/
+git commit -m "feat: pageA 프로젝트 추가"
+
+# 8. 이제 npm run build 시 pageA도 자동으로 빌드됨
 ```
+
+**각 페이지는 완전히 독립적입니다:**
+- vibeX와 pageA는 서로 다른 코드, 다른 목적
+- 충돌이나 간섭 없음
+- AI와 작업할 때: "pageA/ 폴더만 작업해주세요" 라고 지시 가능
 
 ## 🐛 트러블슈팅
 

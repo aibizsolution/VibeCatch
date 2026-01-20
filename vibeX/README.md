@@ -486,6 +486,56 @@ const MODULE_ADDON_MONTHLY = {
 # 3. 부분 빌드 재실행: npm run build:vibeX
 ```
 
+## 📝 vibeX 커스터마이징 팁
+
+### 계산 로직 확인
+계산기가 제대로 작동하려면:
+1. 모든 DOM ID가 일치해야 함 (vibeX-calculator.js에서 `getElementById` 호출)
+2. 입력값 검증은 `clampNonNegInt()` 사용
+3. 가격 포맷은 `formatWon()` 사용
+
+### 새 플랜 추가하기
+예: Basic/Pro/Enterprise 외에 Startup 플랜 추가
+
+1. **03-hero.html에 카드 추가**
+   ```html
+   <div class="flex h-full flex-col rounded-2xl border border-slate-200 p-4">
+     <div class="text-sm font-semibold">Startup</div>
+     <div class="mt-3">
+       <div class="text-2xl font-bold" data-plan-price="startup" data-monthly="800000">₩800,000</div>
+     </div>
+     <!-- ... 나머지 내용 -->
+   </div>
+   ```
+
+2. **vibeX-main.js에서 PLAN_MONTHLY 업데이트**
+   ```javascript
+   const PLAN_MONTHLY = {
+     startup: 800000,
+     basic: 1500000,
+     pro: 4900000,
+     ent: 12000000
+   };
+   ```
+
+3. **vibeX-calculator.js에서 MODULE_ADDON_MONTHLY 업데이트**
+   ```javascript
+   const MODULE_ADDON_MONTHLY = {
+     vibeAI: { startup: 600000, basic: 800000, pro: 1200000, ent: null },
+     vibeFlow: { startup: 300000, basic: 500000, pro: 800000, ent: null }
+   };
+   ```
+
+4. **04-calculator.html의 플랜 선택 옵션 추가**
+   ```html
+   <option value="startup">Startup</option>
+   ```
+
+5. **빌드 후 테스트**
+   ```bash
+   npm run build:vibeX
+   ```
+
 ## 🔗 관련 문서
 
 - [전체 저장소 README](../README.md) - 멀티 페이지 구조 및 빌드 시스템
