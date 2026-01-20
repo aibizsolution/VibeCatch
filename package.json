@@ -4,7 +4,13 @@
   "description": "VibeX Platform - HTML 모듈화 빌드",
   "scripts": {
     "build": "node build.js",
-    "watch": "nodemon build.js"
+    "build:vibeX": "node build.js vibeX",
+    "build:pageA": "node build.js pageA",
+    "build:pageB": "node build.js pageB",
+    "build:pageC": "node build.js pageC",
+    "watch": "nodemon build.js",
+    "watch:vibeX": "nodemon --watch vibeX build.js vibeX",
+    "watch:pageA": "nodemon --watch pageA build.js pageA"
   },
   "keywords": [
     "vibex",

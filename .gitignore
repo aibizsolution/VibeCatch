@@ -4,6 +4,13 @@ npm-debug.log
 yarn-error.log
 
 # Build output
+vibeX/index.html
+pageA/index.html
+pageB/index.html
+pageC/index.html
+*/index.html
+
+# Legacy
 vibeX.html
 
 # OS files
