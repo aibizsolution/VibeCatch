@@ -1,6 +1,6 @@
 # VibeX Platform - 가격 책정 페이지
 
-VibeX 플랫폼의 AI 여론 인텔리전스 서비스 가격 책정 페이지입니다. VibeCatch, VibePlus, VibeFlow 3개 모듈과 상세한 요금 계산기를 포함합니다.
+VibeX 플랫폼의 AI 여론 인텔리전스 서비스 가격 책정 페이지입니다. VibeCatch, VibeAI, VibeFlow 3개 모듈과 상세한 요금 계산기를 포함합니다.
 
 ## 📁 폴더 구조
 
@@ -12,7 +12,7 @@ vibeX/
 │   ├── 03-hero.html           # 히어로 섹션 + 3개 플랜 카드
 │   ├── 04-calculator.html     # 요금 계산기 (대화형)
 │   ├── 05-compare-vibecatch.html # VibeCatch 모듈 비교 테이블
-│   ├── 06-compare-vibeplus.html  # VibePlus 모듈 비교 테이블
+│   ├── 06-compare-vibeplus.html  # VibeAI 모듈 비교 테이블
 │   ├── 07-compare-vibeflow.html  # VibeFlow 모듈 비교 테이블
 │   ├── 08-faq.html            # FAQ 섹션
 │   ├── 09-footer.html         # 푸터
@@ -89,7 +89,7 @@ vibeX/
 ### 03-hero.html (144줄)
 **플랜 카드 (3개)**
 - VibeCatch (Basic/Pro/Ent)
-- VibePlus (Basic/Pro/협의)
+- VibeAI (Basic/Pro/협의)
 - VibeFlow (Basic/Pro/협의)
 
 **요금 표시 방식**
