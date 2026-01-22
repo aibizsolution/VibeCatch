@@ -1,18 +1,10 @@
 # Node.js
 node_modules/
-npm-debug.log
-yarn-error.log
 
-# Build output
-# 각 페이지의 index.html은 GitHub Pages에서 필요하므로 버전 관리에 포함
-# pageA, pageB, pageC는 미래에 추가될 때 같이 포함
-pageA/index.html
-pageB/index.html
-pageC/index.html
-
-# Root .html files (빌드 산출물 - 폴더 구조로 충분)
-*.html
-!index.html
+# Environment
+.env
+.env.local
+.env.*.local
 
 # OS files
 .DS_Store
@@ -20,23 +12,6 @@ Thumbs.db
 
 # IDE
 .idea/
-# .vscode는 프로젝트 설정용으로 제외
-*.swp
-*.swo
-*~
-
-# Logs
-*.log
-logs/
-
-# Environment
-.env
-.env.local
-.env.*.local
 
 # Temporary files
-*.tmp
-.cache/
-
-# Dependencies lock (optional - uncomment if you want to check it in)
-# package-lock.json
+temp/
