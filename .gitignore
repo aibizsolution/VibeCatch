@@ -15,3 +15,8 @@ Thumbs.db
 
 # Temporary files
 temp/
+
+# Build results
+*/index.html
+vibeX/index.html
+research-report/index.html
