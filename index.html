@@ -1,62 +1,112 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>소셜리스닝 - 프로젝트 목록</title>
+    <title>VibeX Intelligence Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css" />
     <style>
-        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        body { 
+            font-family: Pretendard, sans-serif;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            min-height: 100vh;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
-<body>
-    <div class="max-w-2xl mx-auto px-4">
-        <div class="bg-white rounded-2xl shadow-2xl p-8">
-            <h1 class="text-4xl font-bold text-center mb-2 text-slate-900">소셜리스닝 프로젝트</h1>
-            <p class="text-center text-slate-600 mb-8">독립적인 웹 페이지들 (2개)</p>
+<body class="text-slate-200 py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+        <header class="text-center mb-16">
+            <h1 class="text-5xl font-black text-white mb-4 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">
+                VibeX Intelligence
+            </h1>
+            <p class="text-slate-400 text-lg uppercase tracking-[0.2em] font-medium">Project Ecosystem Hub</p>
+        </header>
 
-            <div class="space-y-4" id="projectList">
-                <!-- 프로젝트 목록이 JavaScript로 동적으로 생성됨 -->
-            </div>
-
-            <div class="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-200">
-                <p class="text-sm text-slate-700">
-                    <strong>💡 팁:</strong> 이 페이지는 자동으로 생성됩니다.
-                    새 프로젝트 폴더를 추가하고 <code class="bg-white px-2 py-1 rounded">npm run build</code>를 실행하면 목록이 자동으로 업데이트됩니다.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // 이 배열은 build.js에서 자동으로 생성됩니다
-        const projects = [
-            { name: 'VibeX Business Case', path: 'VibeX-BusinessCase', desc: 'VibeX 사업화 추진안 페이지입니다. 리스크 대응 시장 공백, 경쟁사 비교, 수익 모델, 로드맵을 정리했습니다.' },
-
-            { name: 'VibeX', path: 'vibeX', desc: 'VibeX 플랫폼의 AI 여론 인텔리전스 서비스 가격 책정 페이지입니다. VibeCatch, VibeAI, VibeFlow 3개 모듈과 상세한 요금 계산기를 포함합니다.' },
-            { name: 'VibeX Intro', path: 'vibeX-intro', desc: '첫 방문 30초 안에 “이거 없으면 어떻게 되는데?”를 느끼게 하는 VibeX 소개(공포 마케팅) 랜딩 페이지입니다. 가격/상세 기능은 vibeX 페이지로 연결합니다.' },
-        ];
-
-        const projectList = document.getElementById('projectList');
-
-        if (projects.length === 0) {
-            projectList.innerHTML = '<p class="text-slate-500 text-center py-8">프로젝트를 찾을 수 없습니다.</p>';
-        } else {
-            projects.forEach(project => {
-                const card = document.createElement('a');
-                card.href = `./${project.path}/`;
-                card.className = 'block p-6 border-2 border-slate-200 rounded-xl hover:border-blue-500 hover:shadow-lg transition-all group';
-                card.innerHTML = `
-                    <div class="flex items-start justify-between mb-2">
-                        <h2 class="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">${project.name}</h2>
-                        <span class="text-2xl">→</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <a href="./research-report/" class="group block glass rounded-[2rem] p-8 hover:bg-white/[0.07] hover:border-blue-500/30 transition-all duration-500">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">research-report</h2>
+                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
                     </div>
-                    <p class="text-slate-600">${project.desc}</p>
-                `;
-                projectList.appendChild(card);
-            });
-        }
-    </script>
+                </div>
+                <p class="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                    국내외 주요 데이터 및 AI 테크 기업 32개사에 대한 심층 리서치 리포트입니다. 오픈라우터(OpenRouter) 딥 리서치 API를 활용하여 각 회사의 기술력, 비즈니스 현황, 그리고 인수 시너지를 분석합니다.
+                </p>
+                <div class="mt-8 flex items-center gap-2 text-[10px] font-bold text-blue-400/50 uppercase tracking-widest">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                    Live Project
+                </div>
+            </a>
+            
+            <a href="./vibeX/" class="group block glass rounded-[2rem] p-8 hover:bg-white/[0.07] hover:border-blue-500/30 transition-all duration-500">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">vibeX</h2>
+                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                    VibeX 플랫폼의 AI 여론 인텔리전스 서비스 가격 책정 페이지입니다. VibeCatch, VibeAI, VibeFlow 3개 모듈과 상세한 요금 계산기를 포함합니다.
+                </p>
+                <div class="mt-8 flex items-center gap-2 text-[10px] font-bold text-blue-400/50 uppercase tracking-widest">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                    Live Project
+                </div>
+            </a>
+            
+            <a href="./VibeX-BusinessCase/" class="group block glass rounded-[2rem] p-8 hover:bg-white/[0.07] hover:border-blue-500/30 transition-all duration-500">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">VibeX-BusinessCase</h2>
+                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                    VibeX-BusinessCase 프로젝트 페이지입니다.
+                </p>
+                <div class="mt-8 flex items-center gap-2 text-[10px] font-bold text-blue-400/50 uppercase tracking-widest">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                    Live Project
+                </div>
+            </a>
+            
+            <a href="./vibeX-intro/" class="group block glass rounded-[2rem] p-8 hover:bg-white/[0.07] hover:border-blue-500/30 transition-all duration-500">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">vibeX-intro</h2>
+                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                    첫 방문 30초 안에 “이거 없으면 어떻게 되는데?”를 느끼게 하는 VibeX 소개용 랜딩 페이지입니다.
+                </p>
+                <div class="mt-8 flex items-center gap-2 text-[10px] font-bold text-blue-400/50 uppercase tracking-widest">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                    Live Project
+                </div>
+            </a>
+            
+        </div>
+
+        <footer class="mt-20 pt-8 border-t border-white/5 text-center text-slate-500 text-sm">
+            <p>&copy; 2025 VibeX Intelligence Hub. Built with automated systems.</p>
+        </footer>
+    </div>
 </body>
 </html>
-
