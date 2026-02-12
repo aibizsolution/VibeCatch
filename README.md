@@ -8,8 +8,8 @@
 
 ## 사용 방법
 
-- 브라우저에서 `intro.html`을 열어 시작합니다.
-- 로컬 서버 실행 시 `http://localhost:5500/intro.html`로 확인합니다.
+- 브라우저에서 `index.html`을 열어 시작합니다. (`intro.html`로 자동 이동)
+- 로컬 서버 실행 시 `http://localhost:5500/`로 확인합니다.
 
 ## 콘텐츠 관리 기준
 
