@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VibeX Platform - VibeCatch Pricing</title>
+  <title>VibeCatch Platform - VibeCatch Pricing</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* 부드러운 스크롤 */
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 136px; }
     body {
       font-family: Pretendard, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
     }
@@ -24,22 +24,25 @@
   <!-- Top bar -->
   <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-      <div class="flex items-center gap-6">
-        <a href="./" class="flex items-center gap-3">
-          <div class="h-9 w-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm">VX</div>
-          <div>
-            <div class="text-sm font-semibold leading-tight">VibeX</div>
-            <div class="text-xs text-slate-500">Beyond Listening</div>
-          </div>
-        </a>
-
-        <nav class="hidden items-center gap-2 md:flex">
-          <a href="#compare" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">플랜 비교</a>
-          <a href="#calculator" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">요금 계산</a>
-        </nav>
-      </div>
-
-      <a href="../vibeX-intro/" class="rounded-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-500">VibeX 소개</a>
+      <a href="./intro.html" class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm">VC</div>
+        <div>
+          <div class="text-sm font-semibold leading-tight">VibeCatch</div>
+          <div class="text-xs text-slate-500">Beyond Listening</div>
+        </div>
+      </a>
+      <nav class="flex items-center gap-2 text-sm">
+        <a href="./intro.html" class="rounded-lg px-3 py-2 text-slate-600 hover:bg-slate-100">소개</a>
+        <a href="./pricing.html" class="rounded-lg bg-blue-600 px-3 py-2 font-semibold text-white">가격/기능</a>
+        <a href="./business-case.html" class="rounded-lg px-3 py-2 text-slate-600 hover:bg-slate-100">사업추진안</a>
+      </nav>
+    </div>
+    <div class="border-t border-slate-200 bg-white/80">
+      <nav class="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto px-4 py-2 text-sm whitespace-nowrap">
+        <a href="#compare" class="rounded-lg px-3 py-1.5 text-slate-600 hover:bg-slate-100">플랜 비교</a>
+        <a href="#calculator" class="rounded-lg px-3 py-1.5 text-slate-600 hover:bg-slate-100">요금 계산</a>
+        <a href="#contact" class="rounded-lg px-3 py-1.5 text-slate-600 hover:bg-slate-100">문의</a>
+      </nav>
     </div>
   </header>
   <!-- Hero -->
@@ -48,10 +51,10 @@
       <div>
         <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
           필요한 만큼만 늘리는<br class="hidden md:block" />
-          <span class="text-slate-700">VibeX Platform</span> 요금제
+          <span class="text-slate-700">VibeCatch Platform</span> 요금제
         </h1>
         <p class="mt-3 text-slate-600">
-          VibeX 플랫폼은 <span class="font-semibold">유튜브·SNS·뉴스를 통합 분석하는 <br/>AI 여론 인텔리전스 플랫폼</span>입니다.<br/>
+          VibeCatch 플랫폼은 <span class="font-semibold">유튜브·SNS·뉴스를 통합 분석하는 <br/>AI 여론 인텔리전스 플랫폼</span>입니다.<br/>
           필요한 모듈만 선택해서 사용할 수 있습니다.
         </p>
 
@@ -64,9 +67,12 @@
           <div class="font-semibold">핵심 개념(쉽게)</div>
           <ul class="mt-2 list-disc space-y-1 pl-5">
             <li>모든 플랜에 <span class="font-semibold">VibeCatch가 기본 포함</span>됩니다.</li>
-            <li><span class="font-semibold">VibeAI, VibeFlow</span>는 필요 시 선택 추가할 수 있습니다.</li>
+            <li><span class="font-semibold">AI Plus, Workflow</span>는 필요 시 선택 추가할 수 있습니다.</li>
             <li><span class="font-semibold">차등(금액 차이)</span>은 사용량/규모와 추가 모듈로 결정됩니다.</li>
           </ul>
+          <p class="mt-3 text-xs text-slate-500">
+            참고: Core에는 기본 AI 요약이 포함됩니다. <span class="font-semibold">AI Plus</span>는 생성형 AI/AI 검색 관점까지 확장하는 고급 인사이트 모듈입니다.
+          </p>
         </div>
       </div>
 
@@ -104,11 +110,11 @@
               <div class="text-xs font-semibold text-slate-600 mb-3">선택 추가 모듈</div>
               <div class="space-y-2">
                 <div class="flex items-center justify-between text-sm">
-                  <span class="text-slate-700">+ VibeAI</span>
+                  <span class="text-slate-700">+ AI Plus</span>
                   <span class="font-semibold text-slate-900">+80만원/월</span>
                 </div>
                 <div class="flex items-center justify-between text-sm">
-                  <span class="text-slate-700">+ VibeFlow</span>
+                  <span class="text-slate-700">+ Workflow</span>
                   <span class="font-semibold text-slate-900">+50만원/월</span>
                 </div>
               </div>
@@ -137,11 +143,11 @@
               <div class="text-xs font-semibold text-slate-600 mb-3">선택 추가 모듈</div>
               <div class="space-y-2">
                 <div class="flex items-center justify-between text-sm">
-                  <span class="text-slate-700">+ VibeAI</span>
+                  <span class="text-slate-700">+ AI Plus</span>
                   <span class="font-semibold text-slate-900">+120만원/월</span>
                 </div>
                 <div class="flex items-center justify-between text-sm">
-                  <span class="text-slate-700">+ VibeFlow</span>
+                  <span class="text-slate-700">+ Workflow</span>
                   <span class="font-semibold text-slate-900">+80만원/월</span>
                 </div>
               </div>
@@ -168,11 +174,11 @@
               <div class="text-xs font-semibold text-slate-600 mb-3">선택 추가 모듈</div>
               <div class="space-y-2">
                 <div class="flex items-center justify-between text-sm">
-                  <span class="text-slate-700">+ VibeAI</span>
+                  <span class="text-slate-700">+ AI Plus</span>
                   <span class="font-semibold text-slate-900">협의</span>
                 </div>
                 <div class="flex items-center justify-between text-sm">
-                  <span class="text-slate-700">+ VibeFlow</span>
+                  <span class="text-slate-700">+ Workflow</span>
                   <span class="font-semibold text-slate-900">협의</span>
                 </div>
               </div>
@@ -216,14 +222,14 @@
               <label class="flex items-center justify-between gap-2 text-sm">
                 <span class="flex items-center gap-2">
                   <input id="moduleAI" type="checkbox" class="h-4 w-4 rounded border-slate-300" />
-                  <span class="text-slate-700">VibeAI</span>
+                  <span class="text-slate-700">AI Plus</span>
                 </span>
                 <span id="moduleAIPrice" class="font-semibold text-slate-900">+ ₩0</span>
               </label>
               <label class="flex items-center justify-between gap-2 text-sm">
                 <span class="flex items-center gap-2">
                   <input id="moduleFlow" type="checkbox" class="h-4 w-4 rounded border-slate-300" />
-                  <span class="text-slate-700">VibeFlow</span>
+                  <span class="text-slate-700">Workflow</span>
                 </span>
                 <span id="moduleFlowPrice" class="font-semibold text-slate-900">+ ₩0</span>
               </label>
@@ -337,13 +343,13 @@
                           data-detail="ac">
                     i
                     <span class="pointer-events-none absolute -top-2 left-7 hidden w-64 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
-                      VibeAI의 고급 AI(인사이트/타임라인 등) 사용량입니다.
+                      AI Plus의 고급 AI(인사이트/타임라인 등) 사용량입니다.
                     </span>
                   </button>
                 </div>
                 <span class="text-sm font-bold text-slate-900">₩400,000</span>
               </div>
-              <div id="acHint" class="mt-1 text-[11px] text-slate-500">VibeAI 선택 시에만 적용됩니다.</div>
+              <div id="acHint" class="mt-1 text-[11px] text-slate-500">AI Plus 선택 시에만 적용됩니다.</div>
               <div class="mt-2 flex items-center gap-2">
                 <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="acAdd" data-step="-1" type="button">-</button>
                 <input id="acAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
@@ -403,7 +409,7 @@
           </div>
 
           <div class="mt-3 text-xs text-slate-600">
-            ✔️ 의사결정 팁: “기능은 Pro로 충분한데, <span class="font-semibold">키워드만 늘리기</span>”, “VibeAI 선택 후 <span class="font-semibold">AC만 증량</span>” 같은 식으로 조합하면 됩니다.
+            ✔️ 의사결정 팁: “기능은 Pro로 충분한데, <span class="font-semibold">키워드만 늘리기</span>”, “AI Plus 선택 후 <span class="font-semibold">AC만 증량</span>” 같은 식으로 조합하면 됩니다.
           </div>
         </div>
       </div>
@@ -917,7 +923,7 @@
               </svg>
             </div>
             <div>
-              <div class="text-2xl font-bold text-white">VibeAI</div>
+              <div class="text-2xl font-bold text-white">AI Plus</div>
               <div class="text-sm text-purple-300">더 깊게, 더 넓게 분석하다</div>
             </div>
           </div>
@@ -1186,7 +1192,7 @@
         <div class="flex items-center justify-between">
           <div>
             <div class="text-sm font-bold">고급 AI 분석/요약 (AC 사용)</div>
-            <div class="mt-1 text-xs text-slate-500">VibeAI 선택 시 제공되며, 사용량은 AC로 계산됩니다.</div>
+            <div class="mt-1 text-xs text-slate-500">AI Plus 선택 시 제공되며, 사용량은 AC로 계산됩니다.</div>
           </div>
           <button class="toggleAllBtn text-xs font-semibold text-blue-600 hover:text-slate-700 whitespace-nowrap ml-4" type="button">모두 열기</button>
         </div>
@@ -1318,7 +1324,7 @@
               </svg>
             </div>
             <div>
-              <div class="text-2xl font-bold text-white">VibeFlow</div>
+              <div class="text-2xl font-bold text-white">Workflow</div>
               <div class="text-sm text-blue-300">분석에서 실행까지, 자동으로 흐른다</div>
             </div>
           </div>
@@ -1605,7 +1611,7 @@
       <div class="space-y-4">
         <div class="faq-item rounded-xl border border-slate-200 bg-white p-5">
           <h4 class="font-semibold text-slate-900 mb-2">VibeCatch만 사용할 수 있나요?</h4>
-          <p class="text-sm text-slate-700">네, 모든 플랜에 VibeCatch가 기본 포함되어 있으며, VibeAI와 VibeFlow는 선택 추가 모듈입니다.</p>
+          <p class="text-sm text-slate-700">네, 모든 플랜에 VibeCatch가 기본 포함되어 있으며, AI Plus와 Workflow는 선택 추가 모듈입니다.</p>
         </div>
 
         <div class="faq-item rounded-xl border border-slate-200 bg-white p-5">
@@ -1627,13 +1633,13 @@
         <div>
           <div class="text-lg font-bold">도입/확장 상담</div>
           <div class="mt-1 text-sm text-slate-600">
-            VibeX 플랫폼은 필요한 모듈만 선택하는 방식입니다.<br class="hidden md:block" />
-            VibeCatch(기본 모니터링), VibeAI(고급 분석), VibeFlow(실행 자동화) 모듈을 제공합니다.
+            VibeCatch 플랫폼은 필요한 모듈만 선택하는 방식입니다.<br class="hidden md:block" />
+            VibeCatch Core(기본 모니터링), AI Plus(고급/AI 여론 분석), Workflow(실행 자동화) 모듈을 제공합니다.
           </div>
         </div>
         <div class="flex flex-wrap gap-3 md:justify-end">
           <a href="#calculator" class="rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-500">예산 계산으로 시작</a>
-          <a href="../vibeX-intro/" class="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-100">VibeX 소개 보기</a>
+          <a href="./intro.html" class="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-100">VibeCatch 소개 보기</a>
         </div>
       </div>
 
@@ -1648,7 +1654,505 @@
       </div>
     </div>
   </footer>
-  <script src="./vibeX-main.js"></script>
-  <script src="./vibeX-calculator.js"></script>
+  <script>
+// ---------------------------
+// Pricing + UI logic (Main)
+// ---------------------------
+
+// Constants
+const DISCOUNT_ANNUAL = 0.15; // example
+
+const PLAN_MONTHLY = {
+  basic: 1500000,
+  pro: 4900000,
+  ent: 12000000 // base anchor; enterprise is "~"
+};
+
+const OPTION_PRICES = {
+  kw10: 200000,     // per +10 keywords
+  seat1: 50000,     // per seat
+  dc50k: 600000,    // per +50k DC
+  ac10k: 400000,    // per +10k AC (VibeAI 필수)
+  bf1000: 150000,   // per +1,000 keyword-days
+  rt_15to5: 800000,
+  rt_5to1: 2000000
+};
+
+// Details content (decision-maker friendly)
+const DETAILS = {
+  keywords: {
+    title: "키워드(+10)",
+    body: `
+      <p><b>키워드</b>는 모니터링할 브랜드/제품/인물/이슈 단어입니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>키워드가 늘어나면, 그만큼 수집/분석 대상이 넓어집니다.</li>
+        <li>실무에서는 "사업부/브랜드 수"가 늘어날 때 키워드를 주로 증량합니다.</li>
+      </ul>
+      <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+        예) 'SK hynix', 'HBM', '메모리', '경쟁사명'처럼 키워드가 늘수록 커버리지가 넓어집니다.
+      </div>
+    `
+  },
+  seats: {
+    title: "좌석(+1)",
+    body: `
+      <p><b>좌석</b>은 서비스를 쓰는 사용자 수(팀 확장)입니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>보고용(보기 전용) 인원이 많으면 좌석을 늘리는 경우가 많습니다.</li>
+        <li>필요 시 "보기 전용(저렴)"과 "편집 가능(표준)"을 분리할 수 있습니다.</li>
+      </ul>
+    `
+  },
+  dc: {
+    title: "DC(수집 크레딧)",
+    body: `
+      <p><b>DC</b>는 "데이터 수집에 드는 클라우드 리소스(월 처리량)"입니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>크롤링, 정제, 중복 제거, 인덱싱 등 수집 파이프라인 비용이 포함됩니다.</li>
+        <li>키워드가 많거나 채널 범위가 넓을수록 DC가 더 필요합니다.</li>
+      </ul>
+      <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+        의사결정 포인트: "우리 조직이 월간 얼마나 많은 콘텐츠를 모아야 하는가?"
+      </div>
+    `
+  },
+  ac: {
+    title: "AC(AI 크레딧)",
+    body: `
+      <p><b>AC</b>는 "AI 기능 사용량(월)"입니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>AI 요약, AI 인사이트, 대응 가이드, 영상 타임라인 등 생성형 기능에서 차감됩니다.</li>
+        <li>요약보다 '타임라인/심층 인사이트'가 더 많은 비용이 들 수 있어 AC로 분리합니다.</li>
+      </ul>
+      <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+        의사결정 포인트: "AI를 '가끔' 쓰나, '매일' 리포트처럼 쓰나?"
+      </div>
+    `
+  },
+  backfill: {
+    title: "Backfill(과거 데이터 소급 수집)",
+    body: `
+      <p><b>Backfill</b>은 키워드를 등록한 시점에 "과거 데이터"를 추가로 채워주는 기능입니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>기본은 <b>키워드 등록 이후</b>부터 수집합니다. (불필요한 데이터까지 미리 쌓지 않음)</li>
+        <li>다만 "지난달부터 무슨 일이 있었는지" 같은 요구가 있으면 Backfill로 소급합니다.</li>
+      </ul>
+      <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+        <b>키워드-일</b> 개념: 10키워드 × 30일 = 300 키워드-일<br/>
+        즉, 키워드가 많고 소급 기간이 길수록 비용이 늘어나는 '버스트 작업'입니다.
+      </div>
+    `
+  },
+  realtime: {
+    title: "수집 주기(실시간성)",
+    body: `
+      <p><b>수집 주기</b>는 '얼마나 자주 업데이트되는지'입니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>위기 대응/이슈 모니터링은 1~5분 단위가 유리합니다.</li>
+        <li>일반 리서치/월간 보고는 15분 이상으로도 충분한 경우가 많습니다.</li>
+      </ul>
+    `
+  },
+  collectionMode: {
+    title: "수집 방식(키워드 등록 이후 수집)",
+    body: `
+      <p>이 서비스는 <b>모든 데이터를 미리 전부 저장하는 방식</b>이 아니라,</p>
+      <p class="mt-1"><b>키워드 등록 시점부터 필요한 데이터만 수집</b>합니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>장점: 불필요한 수집 비용을 줄이고, 필요한 것에 리소스를 집중합니다.</li>
+        <li>과거 데이터가 필요할 때만 Backfill로 선택적으로 채웁니다.</li>
+      </ul>
+    `
+  },
+  channels: {
+    title: "채널 커버리지",
+    body: `
+      <p><b>채널 커버리지</b>는 어떤 소스까지 수집/분석하는지입니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>국내 핵심: 유튜브/뉴스/커뮤니티 중심</li>
+        <li>국내 풀: SNS 포함</li>
+        <li>글로벌: 해외 소스 포함(협의/범위 확정 필요)</li>
+      </ul>
+    `
+  },
+  trendSentiment: {
+    title: "언급량/감성/이슈 탐지",
+    body: `
+      <p>실무자가 '지금 무슨 일이 벌어졌는지'를 빠르게 파악하는 기본 세트입니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>언급량 추이: 언제/얼마나 늘었는지</li>
+        <li>감성: 긍정/부정/중립 비율</li>
+        <li>이슈 탐지: 급증/변곡점을 자동으로 표시</li>
+      </ul>
+    `
+  },
+  compare: {
+    title: "경쟁사/키워드 비교",
+    body: `
+      <p>"우리만 보면 안 되고, 비교가 있어야 의미가 있다"를 해결합니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>브랜드 간 언급량/감성/채널 분포 비교</li>
+        <li>경쟁 이슈 발생 시 상대 변화까지 함께 확인</li>
+      </ul>
+    `
+  },
+  trustScore: {
+    title: "데이터 신뢰도(커버리지/품질)",
+    body: `
+      <p>의사결정권자가 가장 많이 묻는 질문: "이 데이터 믿어도 돼?"</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>중복/스팸 제거 수준, 출처 추적, 커버리지 지표 등으로 신뢰도를 보조합니다.</li>
+        <li>고급 수준은 근거(링크/출처)와 품질 리포트를 강화합니다.</li>
+      </ul>
+    `
+  },
+  aiSummary: {
+    title: "AI 요약",
+    body: `
+      <p>길고 많은 콘텐츠를 "한 번에 읽히게" 만드는 기능입니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>뉴스/커뮤니티/댓글 등을 요약해 핵심을 빠르게 파악</li>
+        <li>사용량이 늘수록 AI 비용이 커져 AC로 과금 분리</li>
+      </ul>
+    `
+  },
+  aiInsight: {
+    title: "AI 인사이트/대응 가이드",
+    body: `
+      <p>단순 요약이 아니라 "왜 발생했는지 / 무엇을 해야 하는지"까지 제안합니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>이슈 원인/핵심 논점/리스크 포인트 정리</li>
+        <li>커뮤니케이션/대응 문구 템플릿 제공</li>
+      </ul>
+    `
+  },
+  timeline: {
+    title: "영상 하이라이트(타임라인)",
+    body: `
+      <p>유튜브 영상 전체를 다 보지 않아도, <b>키워드가 언급된 구간</b>만 빠르게 찾습니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>시간 절감 효과가 크지만 분석 비용도 커서 AC에서 차감</li>
+      </ul>
+    `
+  },
+  retention: {
+    title: "보관기간(Retention)",
+    body: `
+      <p>수집한 데이터를 "얼마나 오래" 보관하는지입니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>보고/감사/추적이 필요하면 보관기간이 중요합니다.</li>
+        <li>보관이 길수록 저장비/운영비가 늘어 플랜에서 차등됩니다.</li>
+      </ul>
+    `
+  },
+  download: {
+    title: "다운로드/리포트",
+    body: `
+      <p>실무에서는 "대시보드도 좋지만, 보고자료로 뽑아야" 결재가 끝납니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>CSV/XLSX는 분석팀, PPT는 보고용에 유리합니다.</li>
+        <li>맞춤 리포트는 Enterprise에서 협의합니다.</li>
+      </ul>
+    `
+  },
+  api: {
+    title: "API/웹훅/SSO",
+    body: `
+      <p>조직이 커질수록 "연동/보안"이 도입의 핵심 조건이 됩니다.</p>
+      <ul class="mt-2 list-disc pl-5 space-y-1">
+        <li>API/웹훅: 다른 시스템(Jira/Slack/BI 등)과 연결</li>
+        <li>SSO/감사로그: 보안/접근통제/감사 대응</li>
+      </ul>
+    `
+  }
+};
+
+// Utility function
+function formatWon(n) {
+  if (!Number.isFinite(n)) return "₩0";
+  return "₩" + Math.round(n).toLocaleString("ko-KR");
+}
+
+// Billing toggle (for plan cards only)
+let billingMode = "monthly"; // monthly | annual
+
+const monthlyBtn = document.getElementById("billingMonthlyBtn");
+const annualBtn = document.getElementById("billingAnnualBtn");
+
+function setBilling(mode) {
+  billingMode = mode;
+
+  const isMonthly = mode === "monthly";
+  monthlyBtn.className = isMonthly
+    ? "rounded-lg px-3 py-1.5 text-sm font-semibold bg-white shadow-sm"
+    : "rounded-lg px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900";
+  annualBtn.className = !isMonthly
+    ? "rounded-lg px-3 py-1.5 text-sm font-semibold bg-white shadow-sm"
+    : "rounded-lg px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900";
+
+  // Update card prices (annual displays estimated monthly-equivalent or annual? We'll show monthly, but toggle changes to annual-per-month equivalent with note)
+  const planEls = document.querySelectorAll("[data-plan-price]");
+  planEls.forEach(el => {
+    const monthly = Number(el.getAttribute("data-monthly"));
+    if (!Number.isFinite(monthly)) return;
+
+    if (billingMode === "monthly") {
+      el.textContent = formatWon(monthly);
+      el.nextElementSibling && (el.nextElementSibling.textContent = "/ 월 (VAT 별도)");
+    } else {
+      const annualMonthlyEq = monthly * (1 - DISCOUNT_ANNUAL);
+      el.textContent = formatWon(annualMonthlyEq);
+      el.nextElementSibling && (el.nextElementSibling.textContent = "/ 월 (연간 결제 환산, VAT 별도)");
+    }
+  });
+
+  // 계산기가 로드되었으면 재계산 (안전 체크)
+  if (typeof recompute === 'function') {
+    recompute();
+  }
+}
+
+monthlyBtn.addEventListener("click", () => setBilling("monthly"));
+annualBtn.addEventListener("click", () => setBilling("annual"));
+
+// Toggle detail rows in comparison tables
+function toggleDetail(key) {
+  // Find the detail row for this key
+  const detailRow = document.querySelector(`tr.detail-row[data-detail-for="${key}"]`);
+  if (!detailRow) return;
+
+  // Close all other detail rows
+  document.querySelectorAll('tr.detail-row').forEach(row => {
+    if (row !== detailRow) {
+      row.classList.add('hidden');
+    }
+  });
+
+  // Toggle this detail row
+  detailRow.classList.toggle('hidden');
+}
+
+// Toggle all details in a category
+function toggleAllDetails(categoryId) {
+  const category = document.querySelector(`[data-category="${categoryId}"]`);
+  if (!category) return;
+
+  const detailRows = category.querySelectorAll('tr.detail-row');
+  const allHidden = Array.from(detailRows).every(row => row.classList.contains('hidden'));
+
+  detailRows.forEach(row => {
+    if (allHidden) {
+      row.classList.remove('hidden');
+    } else {
+      row.classList.add('hidden');
+    }
+  });
+
+  // Update button text
+  const btn = category.querySelector('.toggleAllBtn');
+  if (btn) {
+    btn.textContent = allHidden ? '모두 닫기' : '모두 열기';
+  }
+}
+
+document.querySelectorAll(".rowBtn").forEach(btn => {
+  btn.addEventListener("click", () => toggleDetail(btn.getAttribute("data-detail")));
+});
+document.querySelectorAll(".infoBtn").forEach(btn => {
+  btn.addEventListener("click", () => toggleDetail(btn.getAttribute("data-detail")));
+});
+document.querySelectorAll(".toggleAllBtn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const categoryId = btn.closest('[data-category]').getAttribute('data-category');
+    toggleAllDetails(categoryId);
+  });
+});
+
+// init
+setBilling("monthly");
+
+</script>
+  <script>
+// ---------------------------
+// Calculator logic
+// ---------------------------
+
+// 플랜별 추가 모듈(월) 요금: 상단 Hero 플랜 카드의 표기값을 기준으로 함
+// - VibeCatch는 모든 플랜에 기본 포함(별도 선택 없음)
+// - VibeAI/VibeFlow는 선택 추가
+// - Enterprise는 협의(계산기에서는 선택 불가 처리)
+const MODULE_ADDON_MONTHLY = {
+  vibeAI: { basic: 800000, pro: 1200000, ent: null },
+  vibeFlow: { basic: 500000, pro: 800000, ent: null }
+};
+
+// DOM elements
+const planSelect = document.getElementById("planSelect");
+const moduleAI = document.getElementById("moduleAI");
+const moduleFlow = document.getElementById("moduleFlow");
+const moduleAIPrice = document.getElementById("moduleAIPrice");
+const moduleFlowPrice = document.getElementById("moduleFlowPrice");
+const moduleEntNote = document.getElementById("moduleEntNote");
+const kwAdd = document.getElementById("kwAdd");
+const seatAdd = document.getElementById("seatAdd");
+const dcAdd = document.getElementById("dcAdd");
+const acAdd = document.getElementById("acAdd");
+const acCard = document.getElementById("acCard");
+const acHint = document.getElementById("acHint");
+const bfAdd = document.getElementById("bfAdd");
+const realtimeUp = document.getElementById("realtimeUp");
+const estMonthly = document.getElementById("estMonthly");
+const estAnnual = document.getElementById("estAnnual");
+const resetBtn = document.getElementById("resetBtn");
+
+function clampNonNegInt(v) {
+  const n = parseInt(String(v).replace(/[^0-9-]/g, ""), 10);
+  if (!Number.isFinite(n)) return 0;
+  return Math.max(0, n);
+}
+
+function getModuleAddonMonthly(moduleKey, planKey) {
+  const table = MODULE_ADDON_MONTHLY[moduleKey];
+  if (!table) return 0;
+  const v = table[planKey];
+  return v ?? 0;
+}
+
+function formatModuleAddon(addon) {
+  if (addon === null) return "협의";
+  return `+ ${formatWon(addon ?? 0)}`;
+}
+
+function syncModuleUI(plan) {
+  const isEnt = plan === "ent";
+
+  // Enterprise는 추가 모듈이 협의라서 계산기에서는 선택을 막음(오해 방지)
+  if (moduleAI) {
+    if (isEnt && moduleAI.checked) moduleAI.checked = false;
+    moduleAI.disabled = isEnt;
+  }
+  if (moduleFlow) {
+    if (isEnt && moduleFlow.checked) moduleFlow.checked = false;
+    moduleFlow.disabled = isEnt;
+  }
+
+  if (moduleEntNote) {
+    moduleEntNote.classList.toggle("hidden", !isEnt);
+  }
+
+  if (moduleAIPrice) {
+    const addon = MODULE_ADDON_MONTHLY.vibeAI?.[plan];
+    moduleAIPrice.textContent = formatModuleAddon(addon);
+  }
+  if (moduleFlowPrice) {
+    const addon = MODULE_ADDON_MONTHLY.vibeFlow?.[plan];
+    moduleFlowPrice.textContent = formatModuleAddon(addon);
+  }
+}
+
+function isVibeAISelected() {
+  return Boolean(moduleAI && moduleAI.checked && !moduleAI.disabled);
+}
+
+function syncAcAvailability() {
+  const enabled = isVibeAISelected();
+
+  if (acAdd) {
+    if (!enabled && clampNonNegInt(acAdd.value) !== 0) acAdd.value = "0";
+    acAdd.disabled = !enabled;
+  }
+
+  if (acCard) {
+    acCard.classList.toggle("opacity-60", !enabled);
+  }
+  if (acHint) {
+    acHint.classList.toggle("text-slate-500", true);
+  }
+}
+
+function recompute() {
+  const plan = planSelect.value;
+  syncModuleUI(plan);
+  syncAcAvailability();
+  let base = PLAN_MONTHLY[plan] ?? 0;
+
+  // If annual toggle active, show monthly-equivalent on cards, but calculator is "월" 기준으로 유지 (decision makers usually compare monthly),
+  // and annual is computed with discount.
+  // (You can flip this easily later if you want.)
+  const k = clampNonNegInt(kwAdd.value);
+  const s = clampNonNegInt(seatAdd.value);
+  const dc = clampNonNegInt(dcAdd.value);
+  const ac = isVibeAISelected() ? clampNonNegInt(acAdd.value) : 0;
+  const bf = clampNonNegInt(bfAdd.value);
+
+  let options = 0;
+  // 추가 모듈(선택)
+  if (moduleAI && moduleAI.checked && !moduleAI.disabled) {
+    options += getModuleAddonMonthly("vibeAI", plan);
+  }
+  if (moduleFlow && moduleFlow.checked && !moduleFlow.disabled) {
+    options += getModuleAddonMonthly("vibeFlow", plan);
+  }
+
+  options += k * OPTION_PRICES.kw10;
+  options += s * OPTION_PRICES.seat1;
+  options += dc * OPTION_PRICES.dc50k;
+  options += ac * OPTION_PRICES.ac10k;
+  options += bf * OPTION_PRICES.bf1000;
+
+  // Realtime upgrade logic (simple)
+  const rt = realtimeUp.value;
+  if (rt === "15to5") options += OPTION_PRICES.rt_15to5;
+  if (rt === "5to1") options += OPTION_PRICES.rt_5to1;
+
+  const monthly = base + options;
+  const annual = monthly * 12 * (1 - DISCOUNT_ANNUAL);
+
+  estMonthly.textContent = formatWon(monthly);
+  estAnnual.textContent = formatWon(annual);
+}
+
+// Step buttons
+document.querySelectorAll(".stepBtn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const targetId = btn.getAttribute("data-target");
+    const step = parseInt(btn.getAttribute("data-step"), 10) || 0;
+    const input = document.getElementById(targetId);
+    if (!input) return;
+    if (input.disabled) return;
+    const cur = clampNonNegInt(input.value);
+    input.value = String(Math.max(0, cur + step));
+    recompute();
+  });
+});
+
+// Inputs
+[planSelect, moduleAI, moduleFlow, kwAdd, seatAdd, dcAdd, acAdd, bfAdd, realtimeUp].filter(Boolean).forEach(el => {
+  el.addEventListener("input", recompute);
+  el.addEventListener("change", recompute);
+});
+
+resetBtn.addEventListener("click", () => {
+  planSelect.value = "pro";
+  if (moduleAI) moduleAI.checked = false;
+  if (moduleFlow) moduleFlow.checked = false;
+  kwAdd.value = "0";
+  seatAdd.value = "0";
+  dcAdd.value = "0";
+  acAdd.value = "0";
+  bfAdd.value = "0";
+  realtimeUp.value = "none";
+  recompute();
+});
+
+// init
+recompute();
+
+</script>
 </body>
 </html>
+
+
+
+
+
