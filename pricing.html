@@ -71,7 +71,7 @@
             <li><span class="font-semibold">차등(금액 차이)</span>은 사용량/규모와 추가 모듈로 결정됩니다.</li>
           </ul>
           <p class="mt-3 text-xs text-slate-500">
-            참고: Core에는 기본 AI 요약이 포함됩니다. <span class="font-semibold">AI Plus</span>는 생성형 AI/AI 검색 관점까지 확장하는 고급 인사이트 모듈입니다.
+            참고: VibeCatch 기본 모듈에는 기본 AI 요약이 포함됩니다. <span class="font-semibold">AI Plus</span>는 생성형 AI/AI 검색 관점까지 확장하는 고급 인사이트 모듈입니다.
           </p>
         </div>
       </div>
@@ -102,6 +102,7 @@
               <li>• 키워드 10 포함</li>
               <li>• 좌석 3 포함</li>
               <li>• 15분 수집 주기</li>
+              <li>• 월 크레딧 30,000건</li>
               <li>• 기본 분석 + AI 요약</li>
             </ul>
 
@@ -134,8 +135,8 @@
               <li>• 키워드 50 포함</li>
               <li>• 좌석 10 포함</li>
               <li>• 5분 수집 주기</li>
+              <li>• 월 크레딧 100,000건</li>
               <li>• 분석 고급(규칙/필터)</li>
-              <li>• Backfill 30일(조건부 포함)</li>
             </ul>
 
             <!-- 모듈 추가 옵션 -->
@@ -166,6 +167,7 @@
               <li>• SSO/감사로그</li>
               <li>• API/웹훅</li>
               <li>• 1분(준실시간) 옵션</li>
+              <li>• 월 크레딧 250,000건(기준)</li>
               <li>• RAG 챗봇/자동 리포트</li>
             </ul>
 
@@ -199,7 +201,7 @@
         <div>
           <h2 class="text-lg font-bold">요금 계산 (합리적 차등: 필요한 것만 증량)</h2>
           <p class="mt-1 text-sm text-slate-600">
-            기능은 플랜으로 정하고, 금액은 사용량(키워드·좌석·수집·AI·소급)으로 결정합니다.
+            기능은 플랜으로 정하고, 금액은 사용량(키워드·좌석·수집·AI)으로 결정합니다.
           </p>
         </div>
       </div>
@@ -275,7 +277,7 @@
                     </span>
                   </button>
                 </div>
-                <span class="text-sm font-bold text-slate-900">₩200,000</span>
+                <span id="kwUnitPrice" class="text-sm font-bold text-slate-900">₩200,000</span>
               </div>
               <div class="mt-2 flex items-center gap-2">
                 <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="kwAdd" data-step="-1" type="button">-</button>
@@ -299,7 +301,7 @@
                     </span>
                   </button>
                 </div>
-                <span class="text-sm font-bold text-slate-900">₩50,000</span>
+                <span id="seatUnitPrice" class="text-sm font-bold text-slate-900">₩50,000</span>
               </div>
               <div class="mt-2 flex items-center gap-2">
                 <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="seatAdd" data-step="-1" type="button">-</button>
@@ -323,7 +325,7 @@
                     </span>
                   </button>
                 </div>
-                <span class="text-sm font-bold text-slate-900">₩600,000</span>
+                <span id="dcUnitPrice" class="text-sm font-bold text-slate-900">₩650,000</span>
               </div>
               <div class="mt-2 flex items-center gap-2">
                 <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="dcAdd" data-step="-1" type="button">-</button>
@@ -333,52 +335,34 @@
               </div>
             </div>
 
-            <!-- AC -->
+            <!-- AI 크레딧 -->
             <div id="acCard" class="rounded-xl border border-slate-200 p-3">
               <div class="flex items-center justify-between gap-2">
                 <div class="flex items-center gap-2">
-                  <span class="text-sm font-semibold">AI AC +10k</span>
+                  <span class="text-sm font-semibold">크레딧 +1,000건</span>
                   <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
                           type="button"
                           data-detail="ac">
                     i
                     <span class="pointer-events-none absolute -top-2 left-7 hidden w-64 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
-                      AI Plus의 고급 AI(인사이트/타임라인 등) 사용량입니다.
+                      크레딧은 수집+분석 처리량 기준입니다. 플랜별 증량 단가가 다르게 적용됩니다.
                     </span>
                   </button>
                 </div>
-                <span class="text-sm font-bold text-slate-900">₩400,000</span>
+                <span id="acUnitPrice" class="text-sm font-bold text-slate-900">₩49,000</span>
               </div>
-              <div id="acHint" class="mt-1 text-[11px] text-slate-500">AI Plus 선택 시에만 적용됩니다.</div>
+              <div id="acHint" class="mt-1 text-[11px] text-slate-500">플랜별 증량 단가가 적용됩니다.</div>
               <div class="mt-2 flex items-center gap-2">
                 <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="acAdd" data-step="-1" type="button">-</button>
                 <input id="acAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
                 <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="acAdd" data-step="1" type="button">+</button>
-                <div class="text-xs text-slate-500">단위(10k)</div>
+                <div class="text-xs text-slate-500">단위(1,000건)</div>
               </div>
             </div>
 
-            <!-- Backfill -->
             <div class="rounded-xl border border-slate-200 p-3 sm:col-span-2">
-              <div class="flex items-center justify-between gap-2">
-                <div class="flex items-center gap-2">
-                  <span class="text-sm font-semibold">Backfill 1,000 키워드-일</span>
-                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
-                          type="button"
-                          data-detail="backfill">
-                    i
-                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-72 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
-                      등록 시 과거 데이터 채우기. 예) 10키워드×30일=300 키워드-일.
-                    </span>
-                  </button>
-                </div>
-                <span class="text-sm font-bold text-slate-900">₩150,000</span>
-              </div>
+              <input id="bfAdd" type="hidden" value="0" />
               <div class="mt-2 flex flex-wrap items-center gap-2">
-                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="bfAdd" data-step="-1" type="button">-</button>
-                <input id="bfAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
-                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="bfAdd" data-step="1" type="button">+</button>
-
                 <div class="ml-2 flex items-center gap-2">
                   <label class="text-xs font-semibold text-slate-600">실시간 업그레이드</label>
                   <select id="realtimeUp" class="rounded-lg border border-slate-200 bg-white px-2 py-1 text-sm">
@@ -409,7 +393,7 @@
           </div>
 
           <div class="mt-3 text-xs text-slate-600">
-            ✔️ 의사결정 팁: “기능은 Pro로 충분한데, <span class="font-semibold">키워드만 늘리기</span>”, “AI Plus 선택 후 <span class="font-semibold">AC만 증량</span>” 같은 식으로 조합하면 됩니다.
+            ✔️ 의사결정 팁: “기능은 Pro로 충분한데, <span class="font-semibold">키워드만 늘리기</span>”, “AI Plus 선택 후 <span class="font-semibold">크레딧만 증량</span>” 같은 식으로 조합하면 됩니다.
           </div>
         </div>
       </div>
@@ -494,7 +478,7 @@
                   <p class="mt-1"><b>키워드 등록 시점부터 필요한 데이터만 수집</b>합니다.</p>
                   <ul class="mt-2 list-disc pl-5 space-y-1">
                     <li>장점: 불필요한 수집 비용을 줄이고, 필요한 것에 리소스를 집중합니다.</li>
-                    <li>과거 데이터가 필요할 때만 Backfill로 선택적으로 채웁니다.</li>
+                    <li>추가 데이터 범위는 필요 시 계약 조건으로 확장할 수 있습니다.</li>
                   </ul>
                 </div>
               </td>
@@ -552,51 +536,24 @@
             <tr class="hover:bg-slate-50">
               <td class="px-5 py-3">
                 <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
-                        data-detail="backfill" type="button">
-                  과거 데이터 소급 수집(Backfill)
-                </button>
-              </td>
-              <td class="px-5 py-3 text-slate-700">0일(옵션)</td>
-              <td class="px-5 py-3 text-slate-700 font-semibold">30일(조건부 포함)</td>
-              <td class="px-5 py-3 text-slate-700 font-semibold">확장(팩/협의)</td>
-            </tr>
-            <tr class="detail-row hidden" data-detail-for="backfill">
-              <td colspan="4" class="px-5 py-4 bg-slate-50">
-                <div class="mt-2 text-sm text-slate-700">
-                  <p><b>Backfill</b>은 키워드를 등록한 시점에 "과거 데이터"를 추가로 채워주는 기능입니다.</p>
-                  <ul class="mt-2 list-disc pl-5 space-y-1">
-                    <li>기본은 <b>키워드 등록 이후</b>부터 수집합니다. (불필요한 데이터까지 미리 쌓지 않음)</li>
-                    <li>다만 "지난달부터 무슨 일이 있었는지" 같은 요구가 있으면 Backfill로 소급합니다.</li>
-                  </ul>
-                  <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
-                    <b>키워드-일</b> 개념: 10키워드 × 30일 = 300 키워드-일<br/>
-                    즉, 키워드가 많고 소급 기간이 길수록 비용이 늘어나는 '버스트 작업'입니다.
-                  </div>
-                </div>
-              </td>
-            </tr>
-
-            <tr class="hover:bg-slate-50">
-              <td class="px-5 py-3">
-                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
                         data-detail="dc" type="button">
-                  월 수집 용량(DC)
+                  월 기본 제공 크레딧
                 </button>
               </td>
-              <td class="px-5 py-3 text-slate-700">50k 포함</td>
-              <td class="px-5 py-3 text-slate-700">120k 포함</td>
-              <td class="px-5 py-3 text-slate-700">250k+ 협의</td>
+              <td class="px-5 py-3 text-slate-700">30,000건</td>
+              <td class="px-5 py-3 text-slate-700">100,000건</td>
+              <td class="px-5 py-3 text-slate-700">250,000건(기준)</td>
             </tr>
             <tr class="detail-row hidden" data-detail-for="dc">
               <td colspan="4" class="px-5 py-4 bg-slate-50">
                 <div class="mt-2 text-sm text-slate-700">
-                  <p><b>DC</b>는 "데이터 수집에 드는 클라우드 리소스(월 처리량)"입니다.</p>
+                  <p><b>크레딧</b>은 "수집 + AI 분석 1건 처리" 기준의 월 처리량입니다.</p>
                   <ul class="mt-2 list-disc pl-5 space-y-1">
-                    <li>크롤링, 정제, 중복 제거, 인덱싱 등 수집 파이프라인 비용이 포함됩니다.</li>
-                    <li>키워드가 많거나 채널 범위가 넓을수록 DC가 더 필요합니다.</li>
+                    <li>운영 기준: 건당 원가(수집+분석)는 내부 원가 정책으로 관리합니다.</li>
+                    <li>필요 처리량이 늘어나면 플랜별 증량 단가로 크레딧을 추가합니다.</li>
                   </ul>
                   <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
-                    의사결정 포인트: "우리 조직이 월간 얼마나 많은 콘텐츠를 모아야 하는가?"
+                    의사결정 포인트: "우리 조직의 월 처리량이 기본 제공 크레딧으로 충분한가?"
                   </div>
                 </div>
               </td>
@@ -676,7 +633,7 @@
                   <p>핵심만 빠르게 훑어보는 <b>기본 요약</b> 기능입니다.</p>
                   <ul class="mt-2 list-disc pl-5 space-y-1">
                     <li>긴 글을 짧게 요약해 흐름만 파악</li>
-                    <li>별도 AC 없이 기본 포함</li>
+                    <li>별도 AI 크레딧 과금 없이 기본 포함</li>
                   </ul>
                 </div>
               </td>
@@ -912,7 +869,7 @@
       </div>
     </div>
 
-    <!-- VibeAI Module Section -->
+    <!-- AI Plus Module Section -->
     <div class="mx-auto max-w-7xl px-4 pb-4 pt-8">
       <div class="rounded-2xl border-2 border-purple-200 bg-gradient-to-r from-slate-900 to-slate-800 p-6">
         <div class="flex items-center justify-between">
@@ -933,7 +890,7 @@
           </div>
         </div>
         <div class="mt-4 text-sm text-slate-300">
-          영상, AI 플랫폼, 고급 AI 분석(AC)까지 프리미엄 수집과 심화 분석을 제공합니다.
+          영상, AI 플랫폼, 고급 AI 분석(AI 크레딧)까지 프리미엄 수집과 심화 분석을 제공합니다.
         </div>
       </div>
     </div>
@@ -1004,8 +961,8 @@
                 </button>
               </td>
               <td class="px-5 py-3 text-slate-700">-</td>
-              <td class="px-5 py-3 text-slate-700">옵션(AC)</td>
-              <td class="px-5 py-3 text-slate-700 font-semibold">포함(AC)</td>
+              <td class="px-5 py-3 text-slate-700">옵션(AI 크레딧)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">포함(AI 크레딧)</td>
             </tr>
             <tr class="detail-row hidden" data-detail-for="videoHighlight">
               <td colspan="4" class="px-5 py-4 bg-slate-50">
@@ -1014,7 +971,7 @@
                   <ul class="mt-2 list-disc pl-5 space-y-1">
                     <li>타임스탬프 클릭 → 해당 구간으로 바로 이동</li>
                     <li>언급 전후 맥락 텍스트도 함께 제공</li>
-                    <li>시간 절감 효과가 크지만 분석 비용이 있어 AC 차감</li>
+                    <li>시간 절감 효과가 크지만 분석 비용이 있어 AI 크레딧 차감</li>
                   </ul>
                 </div>
               </td>
@@ -1186,13 +1143,13 @@
       </div>
     </div>
 
-    <!-- Category: 5. Advanced AI Analysis/Summary (AC) -->
+    <!-- Category: 5. Advanced AI Analysis/Summary (AI 크레딧) -->
     <div class="mt-4 rounded-2xl border border-slate-200 bg-white shadow-sm" data-category="category5">
       <div class="border-b px-5 py-4">
         <div class="flex items-center justify-between">
           <div>
-            <div class="text-sm font-bold">고급 AI 분석/요약 (AC 사용)</div>
-            <div class="mt-1 text-xs text-slate-500">AI Plus 선택 시 제공되며, 사용량은 AC로 계산됩니다.</div>
+            <div class="text-sm font-bold">고급 AI 분석/요약 (AI 크레딧 사용)</div>
+            <div class="mt-1 text-xs text-slate-500">AI Plus 선택 시 제공되며, 사용량은 AI 크레딧으로 계산됩니다.</div>
           </div>
           <button class="toggleAllBtn text-xs font-semibold text-blue-600 hover:text-slate-700 whitespace-nowrap ml-4" type="button">모두 열기</button>
         </div>
@@ -1222,9 +1179,9 @@
                   고급 AI 요약
                 </button>
               </td>
-              <td class="px-5 py-3 text-slate-700">O(AC)</td>
-              <td class="px-5 py-3 text-slate-700">O(AC)</td>
-              <td class="px-5 py-3 text-slate-700">O(AC)</td>
+              <td class="px-5 py-3 text-slate-700">O(AI 크레딧)</td>
+              <td class="px-5 py-3 text-slate-700">O(AI 크레딧)</td>
+              <td class="px-5 py-3 text-slate-700">O(AI 크레딧)</td>
             </tr>
             <tr class="detail-row hidden" data-detail-for="aiSummary">
               <td colspan="4" class="px-5 py-4 bg-slate-50">
@@ -1232,7 +1189,7 @@
                   <p>긴 콘텐츠를 <b>맥락까지 파악해 요약</b>하는 고급 기능입니다.</p>
                   <ul class="mt-2 list-disc pl-5 space-y-1">
                     <li>핵심 논점, 주요 변화점까지 함께 요약</li>
-                    <li>기본 요약은 VibeCatch에 포함, 고급 요약은 AC 사용</li>
+                    <li>기본 요약은 VibeCatch에 포함, 고급 요약은 AI 크레딧 사용</li>
                   </ul>
                 </div>
               </td>
@@ -1246,8 +1203,8 @@
                 </button>
               </td>
               <td class="px-5 py-3 text-slate-700">-</td>
-              <td class="px-5 py-3 text-slate-700 font-semibold">포함(AC)</td>
-              <td class="px-5 py-3 text-slate-700 font-semibold">포함(AC)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">포함(AI 크레딧)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">포함(AI 크레딧)</td>
             </tr>
             <tr class="detail-row hidden" data-detail-for="aiInsight">
               <td colspan="4" class="px-5 py-4 bg-slate-50">
@@ -1268,16 +1225,16 @@
                   영상 하이라이트(타임라인)
                 </button>
               </td>
-              <td class="px-5 py-3 text-slate-700">옵션(AC)</td>
-              <td class="px-5 py-3 text-slate-700">O(AC)</td>
-              <td class="px-5 py-3 text-slate-700">O(AC)</td>
+              <td class="px-5 py-3 text-slate-700">옵션(AI 크레딧)</td>
+              <td class="px-5 py-3 text-slate-700">O(AI 크레딧)</td>
+              <td class="px-5 py-3 text-slate-700">O(AI 크레딧)</td>
             </tr>
             <tr class="detail-row hidden" data-detail-for="timeline">
               <td colspan="4" class="px-5 py-4 bg-slate-50">
                 <div class="mt-2 text-sm text-slate-700">
                   <p>유튜브 영상 전체를 다 보지 않아도, <b>키워드가 언급된 구간</b>만 빠르게 찾습니다.</p>
                   <ul class="mt-2 list-disc pl-5 space-y-1">
-                    <li>시간 절감 효과가 크지만 분석 비용이 있어 AC에서 차감</li>
+                    <li>시간 절감 효과가 크지만 분석 비용이 있어 AI 크레딧에서 차감</li>
                   </ul>
                 </div>
               </td>
@@ -1287,23 +1244,23 @@
               <td class="px-5 py-3">
                 <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
                         data-detail="ac" type="button">
-                  월 AI 용량(AC)
+                  월 기본 제공 크레딧
                 </button>
               </td>
-              <td class="px-5 py-3 text-slate-700">10k 포함</td>
-              <td class="px-5 py-3 text-slate-700">30k 포함</td>
-              <td class="px-5 py-3 text-slate-700">70k+ 협의</td>
+              <td class="px-5 py-3 text-slate-700">3,000건</td>
+              <td class="px-5 py-3 text-slate-700">10,000건</td>
+              <td class="px-5 py-3 text-slate-700">25,000건(기준)</td>
             </tr>
             <tr class="detail-row hidden" data-detail-for="ac">
               <td colspan="4" class="px-5 py-4 bg-slate-50">
                 <div class="mt-2 text-sm text-slate-700">
-                  <p><b>AC</b>는 "고급 AI 기능 사용량(월)"입니다.</p>
+                  <p><b>크레딧</b>은 수집 + AI 분석 1건 처리 기준의 월 제공량입니다.</p>
                   <ul class="mt-2 list-disc pl-5 space-y-1">
-                    <li>AI 인사이트, 대응 가이드, 영상 타임라인 등에서 차감됩니다.</li>
-                    <li>필요할 때만 증량해 사용하는 방식이라 비용 통제가 쉽습니다.</li>
+                    <li>기본 제공량 초과 시 1,000건 단위로 증량 구매가 가능합니다.</li>
+                    <li>증량 단가는 플랜(Basic/Pro/Enterprise)별로 다르게 적용됩니다.</li>
                   </ul>
                   <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
-                    의사결정 포인트: "AI를 '가끔' 쓰나, '매일' 리포트처럼 쓰나?"
+                    의사결정 포인트: "월 처리량이 기본 제공 크레딧을 초과하는가?"
                   </div>
                 </div>
               </td>
@@ -1313,7 +1270,7 @@
       </div>
     </div>
 
-    <!-- VibeFlow Module Section -->
+    <!-- Workflow Module Section -->
     <div class="mx-auto max-w-7xl px-4 pb-4 pt-8">
       <div class="rounded-2xl border-2 border-blue-200 bg-gradient-to-r from-slate-900 to-slate-800 p-6">
         <div class="flex items-center justify-between">
@@ -1634,7 +1591,7 @@
           <div class="text-lg font-bold">도입/확장 상담</div>
           <div class="mt-1 text-sm text-slate-600">
             VibeCatch 플랫폼은 필요한 모듈만 선택하는 방식입니다.<br class="hidden md:block" />
-            VibeCatch Core(기본 모니터링), AI Plus(고급/AI 여론 분석), Workflow(실행 자동화) 모듈을 제공합니다.
+            VibeCatch(기본 모니터링), AI Plus(고급/AI 여론 분석), Workflow(실행 자동화) 모듈을 제공합니다.
           </div>
         </div>
         <div class="flex flex-wrap gap-3 md:justify-end">
@@ -1668,12 +1625,13 @@ const PLAN_MONTHLY = {
   ent: 12000000 // base anchor; enterprise is "~"
 };
 
-const OPTION_PRICES = {
-  kw10: 200000,     // per +10 keywords
-  seat1: 50000,     // per seat
-  dc50k: 600000,    // per +50k DC
-  ac10k: 400000,    // per +10k AC (VibeAI 필수)
-  bf1000: 150000,   // per +1,000 keyword-days
+const OPTION_PRICES_BY_PLAN = {
+  basic: { kw10: 250000, seat1: 70000, dc50k: 750000, credit1k: 55000 },
+  pro: { kw10: 200000, seat1: 50000, dc50k: 650000, credit1k: 49000 },
+  ent: { kw10: 150000, seat1: 40000, dc50k: 650000, credit1k: 48000 }
+};
+
+const REALTIME_UPGRADE_PRICES = {
   rt_15to5: 800000,
   rt_5to1: 2000000
 };
@@ -1706,10 +1664,10 @@ const DETAILS = {
   dc: {
     title: "DC(수집 크레딧)",
     body: `
-      <p><b>DC</b>는 "데이터 수집에 드는 클라우드 리소스(월 처리량)"입니다.</p>
+      <p><b>DC</b>는 "수집 처리량" 기준의 증량 단위입니다.</p>
       <ul class="mt-2 list-disc pl-5 space-y-1">
-        <li>크롤링, 정제, 중복 제거, 인덱싱 등 수집 파이프라인 비용이 포함됩니다.</li>
-        <li>키워드가 많거나 채널 범위가 넓을수록 DC가 더 필요합니다.</li>
+        <li>키워드가 많거나 채널 범위가 넓을수록 수집 처리량이 증가합니다.</li>
+        <li>증량 단가는 플랜(Basic/Pro/Enterprise)별로 다르게 적용됩니다.</li>
       </ul>
       <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
         의사결정 포인트: "우리 조직이 월간 얼마나 많은 콘텐츠를 모아야 하는가?"
@@ -1717,29 +1675,15 @@ const DETAILS = {
     `
   },
   ac: {
-    title: "AC(AI 크레딧)",
+    title: "크레딧(+1,000건)",
     body: `
-      <p><b>AC</b>는 "AI 기능 사용량(월)"입니다.</p>
+      <p><b>크레딧</b>은 "수집 + AI 분석 1건 처리" 기준의 증량 단위입니다.</p>
       <ul class="mt-2 list-disc pl-5 space-y-1">
-        <li>AI 요약, AI 인사이트, 대응 가이드, 영상 타임라인 등 생성형 기능에서 차감됩니다.</li>
-        <li>요약보다 '타임라인/심층 인사이트'가 더 많은 비용이 들 수 있어 AC로 분리합니다.</li>
+        <li>기본 제공량 초과 시 1,000건 단위로 추가 구매합니다.</li>
+        <li>증량 단가는 플랜(Basic/Pro/Enterprise)별로 다르게 적용됩니다.</li>
       </ul>
       <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
-        의사결정 포인트: "AI를 '가끔' 쓰나, '매일' 리포트처럼 쓰나?"
-      </div>
-    `
-  },
-  backfill: {
-    title: "Backfill(과거 데이터 소급 수집)",
-    body: `
-      <p><b>Backfill</b>은 키워드를 등록한 시점에 "과거 데이터"를 추가로 채워주는 기능입니다.</p>
-      <ul class="mt-2 list-disc pl-5 space-y-1">
-        <li>기본은 <b>키워드 등록 이후</b>부터 수집합니다. (불필요한 데이터까지 미리 쌓지 않음)</li>
-        <li>다만 "지난달부터 무슨 일이 있었는지" 같은 요구가 있으면 Backfill로 소급합니다.</li>
-      </ul>
-      <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
-        <b>키워드-일</b> 개념: 10키워드 × 30일 = 300 키워드-일<br/>
-        즉, 키워드가 많고 소급 기간이 길수록 비용이 늘어나는 '버스트 작업'입니다.
+        의사결정 포인트: "월 처리량이 기본 제공 크레딧을 초과하는가?"
       </div>
     `
   },
@@ -1760,7 +1704,7 @@ const DETAILS = {
       <p class="mt-1"><b>키워드 등록 시점부터 필요한 데이터만 수집</b>합니다.</p>
       <ul class="mt-2 list-disc pl-5 space-y-1">
         <li>장점: 불필요한 수집 비용을 줄이고, 필요한 것에 리소스를 집중합니다.</li>
-        <li>과거 데이터가 필요할 때만 Backfill로 선택적으로 채웁니다.</li>
+        <li>추가 데이터 범위가 필요하면 계약 옵션으로 확장할 수 있습니다.</li>
       </ul>
     `
   },
@@ -1812,7 +1756,7 @@ const DETAILS = {
       <p>길고 많은 콘텐츠를 "한 번에 읽히게" 만드는 기능입니다.</p>
       <ul class="mt-2 list-disc pl-5 space-y-1">
         <li>뉴스/커뮤니티/댓글 등을 요약해 핵심을 빠르게 파악</li>
-        <li>사용량이 늘수록 AI 비용이 커져 AC로 과금 분리</li>
+        <li>사용량이 늘수록 AI 비용이 커져 AI 크레딧으로 과금 분리</li>
       </ul>
     `
   },
@@ -1831,7 +1775,7 @@ const DETAILS = {
     body: `
       <p>유튜브 영상 전체를 다 보지 않아도, <b>키워드가 언급된 구간</b>만 빠르게 찾습니다.</p>
       <ul class="mt-2 list-disc pl-5 space-y-1">
-        <li>시간 절감 효과가 크지만 분석 비용도 커서 AC에서 차감</li>
+        <li>시간 절감 효과가 크지만 분석 비용도 커서 AI 크레딧에서 차감</li>
       </ul>
     `
   },
@@ -1979,7 +1923,7 @@ setBilling("monthly");
 
 // 플랜별 추가 모듈(월) 요금: 상단 Hero 플랜 카드의 표기값을 기준으로 함
 // - VibeCatch는 모든 플랜에 기본 포함(별도 선택 없음)
-// - VibeAI/VibeFlow는 선택 추가
+// - AI Plus/Workflow는 선택 추가
 // - Enterprise는 협의(계산기에서는 선택 불가 처리)
 const MODULE_ADDON_MONTHLY = {
   vibeAI: { basic: 800000, pro: 1200000, ent: null },
@@ -1997,13 +1941,15 @@ const kwAdd = document.getElementById("kwAdd");
 const seatAdd = document.getElementById("seatAdd");
 const dcAdd = document.getElementById("dcAdd");
 const acAdd = document.getElementById("acAdd");
-const acCard = document.getElementById("acCard");
-const acHint = document.getElementById("acHint");
 const bfAdd = document.getElementById("bfAdd");
 const realtimeUp = document.getElementById("realtimeUp");
 const estMonthly = document.getElementById("estMonthly");
 const estAnnual = document.getElementById("estAnnual");
 const resetBtn = document.getElementById("resetBtn");
+const kwUnitPrice = document.getElementById("kwUnitPrice");
+const seatUnitPrice = document.getElementById("seatUnitPrice");
+const dcUnitPrice = document.getElementById("dcUnitPrice");
+const acUnitPrice = document.getElementById("acUnitPrice");
 
 function clampNonNegInt(v) {
   const n = parseInt(String(v).replace(/[^0-9-]/g, ""), 10);
@@ -2021,6 +1967,18 @@ function getModuleAddonMonthly(moduleKey, planKey) {
 function formatModuleAddon(addon) {
   if (addon === null) return "협의";
   return `+ ${formatWon(addon ?? 0)}`;
+}
+
+function getPlanOptionPrices(plan) {
+  return OPTION_PRICES_BY_PLAN[plan] ?? OPTION_PRICES_BY_PLAN.pro;
+}
+
+function syncUsageUnitPrices(plan) {
+  const prices = getPlanOptionPrices(plan);
+  if (kwUnitPrice) kwUnitPrice.textContent = formatWon(prices.kw10);
+  if (seatUnitPrice) seatUnitPrice.textContent = formatWon(prices.seat1);
+  if (dcUnitPrice) dcUnitPrice.textContent = formatWon(prices.dc50k);
+  if (acUnitPrice) acUnitPrice.textContent = formatWon(prices.credit1k);
 }
 
 function syncModuleUI(plan) {
@@ -2050,30 +2008,10 @@ function syncModuleUI(plan) {
   }
 }
 
-function isVibeAISelected() {
-  return Boolean(moduleAI && moduleAI.checked && !moduleAI.disabled);
-}
-
-function syncAcAvailability() {
-  const enabled = isVibeAISelected();
-
-  if (acAdd) {
-    if (!enabled && clampNonNegInt(acAdd.value) !== 0) acAdd.value = "0";
-    acAdd.disabled = !enabled;
-  }
-
-  if (acCard) {
-    acCard.classList.toggle("opacity-60", !enabled);
-  }
-  if (acHint) {
-    acHint.classList.toggle("text-slate-500", true);
-  }
-}
-
 function recompute() {
   const plan = planSelect.value;
   syncModuleUI(plan);
-  syncAcAvailability();
+  syncUsageUnitPrices(plan);
   let base = PLAN_MONTHLY[plan] ?? 0;
 
   // If annual toggle active, show monthly-equivalent on cards, but calculator is "월" 기준으로 유지 (decision makers usually compare monthly),
@@ -2082,8 +2020,8 @@ function recompute() {
   const k = clampNonNegInt(kwAdd.value);
   const s = clampNonNegInt(seatAdd.value);
   const dc = clampNonNegInt(dcAdd.value);
-  const ac = isVibeAISelected() ? clampNonNegInt(acAdd.value) : 0;
-  const bf = clampNonNegInt(bfAdd.value);
+  const ac = clampNonNegInt(acAdd.value);
+  const prices = getPlanOptionPrices(plan);
 
   let options = 0;
   // 추가 모듈(선택)
@@ -2094,16 +2032,15 @@ function recompute() {
     options += getModuleAddonMonthly("vibeFlow", plan);
   }
 
-  options += k * OPTION_PRICES.kw10;
-  options += s * OPTION_PRICES.seat1;
-  options += dc * OPTION_PRICES.dc50k;
-  options += ac * OPTION_PRICES.ac10k;
-  options += bf * OPTION_PRICES.bf1000;
+  options += k * prices.kw10;
+  options += s * prices.seat1;
+  options += dc * prices.dc50k;
+  options += ac * prices.credit1k;
 
   // Realtime upgrade logic (simple)
   const rt = realtimeUp.value;
-  if (rt === "15to5") options += OPTION_PRICES.rt_15to5;
-  if (rt === "5to1") options += OPTION_PRICES.rt_5to1;
+  if (rt === "15to5") options += REALTIME_UPGRADE_PRICES.rt_15to5;
+  if (rt === "5to1") options += REALTIME_UPGRADE_PRICES.rt_5to1;
 
   const monthly = base + options;
   const annual = monthly * 12 * (1 - DISCOUNT_ANNUAL);
